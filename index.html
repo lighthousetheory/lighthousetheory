@@ -1,0 +1,1723 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LighthouseTheory - Offering clarity, direction and safety in the sea of money</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-color: #fff;
+      --text-color: #000;
+      --primary-color: #000;
+      --accent-color: #444;
+      --warning-color: #888;
+      --success-color: #222;
+      --gradient: none;
+      --card-bg: #fff;
+      --border-color: #ccc;
+      --shadow: 0 4px 16px rgba(0,0,0,0.08);
+      --shadow-hover: 0 8px 32px rgba(0,0,0,0.12);
+      --h1-size: 3rem;
+      --h2-size: 2rem;
+      --h3-size: 1.25rem;
+      --body-size: 1.1rem;
+    }
+    [data-theme="dark"] {
+      --bg-color: #000;
+      --text-color: #fff;
+      --primary-color: #fff;
+      --accent-color: #bbb;
+      --warning-color: #888;
+      --success-color: #eee;
+      --gradient: none;
+      --card-bg: #111;
+      --border-color: #444;
+    }
+    
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    
+    body {
+      font-family: 'Inter', 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      line-height: 1.6;
+      font-size: var(--body-size);
+      transition: all 0.3s ease;
+    }
+    h1, h2, h3, h4 {
+      font-family: 'Inter', 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+      color: #000 !important;
+      font-weight: 800 !important;
+      letter-spacing: -1px;
+      margin-top: 0;
+    }
+    .hero-main-heading {
+      font-family: 'Inter', 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+      font-size: 3rem;
+      font-weight: 900;
+      color: #000;
+      letter-spacing: -2px;
+      line-height: 1.1;
+      margin-bottom: 0.2em;
+      text-align: center;
+    }
+    .hero-main-heading.nowrap {
+      white-space: nowrap;
+    }
+    @media (max-width: 600px) {
+      .hero-main-heading {
+        font-size: 2rem;
+      }
+    }
+    h1 {
+      font-size: var(--h1-size);
+      font-weight: 900 !important;
+      letter-spacing: -2px;
+      line-height: 1.1;
+    }
+    h2 {
+      font-size: var(--h2-size);
+      font-weight: 800 !important;
+    }
+    h3 {
+      font-size: var(--h3-size);
+      font-weight: 800 !important;
+    }
+    h4 {
+      font-size: 1.1rem;
+      font-weight: 800 !important;
+    }
+    
+    /* Header */
+    header {
+      background-color: var(--card-bg);
+      box-shadow: var(--shadow);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      padding: 0.8rem 0;
+    }
+    
+    .header-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 1rem;
+    }
+    
+    .logo {
+      font-family: 'Inter', 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+      font-size: 2rem;
+      font-weight: 800;
+      letter-spacing: -1px;
+      color: var(--primary-color);
+    }
+    
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+      color: var(--text-color);
+    }
+    
+    nav {
+      display: flex;
+      gap: 1.5rem;
+      align-items: center;
+    }
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+    .dropdown-menu {
+      display: none;
+      position: absolute;
+      background: var(--card-bg);
+      min-width: 180px;
+      box-shadow: var(--shadow);
+      z-index: 1001;
+      border-radius: 6px;
+      padding: 0.5rem 0;
+      top: 100%;
+      left: 0;
+    }
+    .dropdown-menu a {
+      display: block;
+      padding: 0.5rem 1.2rem;
+      color: var(--primary-color);
+      text-decoration: none;
+      font-size: 1rem;
+      transition: background 0.2s;
+    }
+    .dropdown-menu a:hover {
+      background: #f0f0f0;
+    }
+    .dropdown.open .dropdown-menu {
+      display: block;
+    }
+    .dropdown:hover .dropdown-menu {
+      display: block;
+    }
+    
+    nav a {
+      text-decoration: none;
+      color: var(--primary-color);
+      font-family: 'Inter', 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+      font-weight: 600;
+      font-size: 1.1rem;
+      letter-spacing: 0.5px;
+      transition: color 0.2s;
+      position: relative;
+    }
+    
+    nav a:hover {
+      color: #555;
+      background: #eee !important;
+    }
+    
+      .card {
+        background: rgba(249, 247, 253, 0.97);
+        box-shadow: 0 2px 8px rgba(108, 46, 183, 0.10);
+        border: 1px solid #e6b80022;
+      }
+    nav a::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--primary-color);
+      transition: width 0.3s ease;
+    }
+    
+    nav a:hover::after {
+      width: 100%;
+    }
+    
+    .theme-toggle {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      color: var(--text-color);
+      padding: 0.5rem;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 1.1rem;
+      transition: transform 0.3s ease;
+    }
+    
+    .theme-toggle:hover {
+      transform: scale(1.1);
+    }
+    
+    /* Container */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+    
+    /* Hero Section */
+    .hero {
+      padding: 3rem 0;
+      text-align: center;
+      background: linear-gradient(135deg, var(--primary-color)20, var(--accent-color)20);
+      border-radius: 20px;
+      margin: 1.5rem 0;
+    }
+    
+    .hero-content {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+      width: 100%;
+      flex-direction: column;
+      text-align: center;
+    }
+    
+    .hero-text {
+      flex: 1;
+      max-width: 700px;
+      text-align: center;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .hero-text h1 {
+      font-size: var(--h1-size);
+      margin-bottom: 1.5rem;
+      color: #000 !important;
+      background: none;
+      font-family: 'Nunito', 'Inter', sans-serif;
+      font-weight: 900 !important;
+      letter-spacing: -2px;
+      line-height: 1.1;
+    }
+    
+    .hero-text .highlight {
+      color: var(--accent-color);
+      font-weight: bold;
+    }
+    
+    .hero-text p {
+      font-size: 1.2rem;
+      margin-bottom: 1.3rem;
+      color: var(--warning-color);
+      font-weight: 500;
+    }
+    
+    .hero-image {
+      flex: 1;
+      max-width: 300px;
+    }
+    
+    .hero-image img {
+      width: 100%;
+      height: auto;
+      border-radius: 50%;
+      box-shadow: var(--shadow-hover);
+    }
+    
+    /* Buttons */
+    .btn {
+      display: inline-block;
+      padding: 1rem 2.2rem;
+      border-radius: 999px;
+      font-size: 1.1rem;
+      font-weight: 700;
+      border: none;
+      background: #111;
+      color: #fff;
+      text-decoration: none;
+      transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+      box-shadow: var(--shadow);
+    }
+    
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-hover);
+      background: #222;
+      color: #fff;
+    }
+    
+    .btn-secondary {
+      background: #fff;
+      color: #111;
+      border: 2px solid #111;
+    }
+    
+    .btn-secondary:hover {
+      background: #111;
+      color: #fff;
+    }
+    
+    .btn-outline {
+      background: #fff;
+      color: #111;
+      border: 2px solid #111;
+    }
+    
+    .btn-outline:hover {
+      background: #111;
+      color: #fff;
+    }
+    
+    /* Cards */
+    .card {
+      background: var(--card-bg);
+      border-radius: 15px;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      box-shadow: var(--shadow);
+      transition: all 0.3s ease;
+      border: 1px solid var(--border-color);
+      text-align: center;
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.7s cubic-bezier(0.4,0,0.2,1), transform 0.7s cubic-bezier(0.4,0,0.2,1);
+    }
+    .card.in-view {
+      opacity: 1;
+      transform: none;
+    }
+    
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-hover);
+    }
+    
+    .card h3 {
+      margin-bottom: 0.9rem;
+      font-size: 1.3rem;
+    }
+    
+    .card p {
+      margin-bottom: 0.9rem;
+    }
+    
+    /* Grid Layout */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+      margin: 1.5rem 0;
+      justify-items: center;
+      align-items: center;
+      width: 100%;
+    }
+    
+    .grid-2 {
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+    
+    /* Sections */
+    section {
+      padding: 1.3rem 0;
+    }
+    /* Reduce spacing specifically between KYC and Hero */
+    #kyc {
+      padding-bottom: 0.5rem;
+    }
+    #home.hero {
+      padding-top: 1rem;
+      margin-top: 0.3rem;
+    }
+    
+    .section-title {
+      font-size: var(--h2-size);
+      font-weight: 800 !important;
+      text-align: center;
+      letter-spacing: -1px;
+    }
+    
+    .section-subtitle {
+      font-size: 1.1rem;
+      color: #444;
+      font-weight: 400;
+      text-align: center;
+    }
+    
+    /* Forms */
+    form {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    
+    .form-group {
+      margin-bottom: 1.1rem;
+    }
+    
+    label {
+      margin-bottom: 0.4rem;
+      font-weight: 500;
+      color: var(--text-color);
+    }
+    
+    input, textarea, select {
+      padding: 0.9rem;
+      font-size: 1rem;
+      border: 2px solid var(--border-color);
+      border-radius: 10px;
+      transition: border-color 0.3s ease;
+      background: var(--card-bg);
+      color: var(--text-color);
+    }
+    
+    input:focus, textarea:focus, select:focus {
+      outline: none;
+      border-color: var(--primary-color);
+      box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+    }
+    
+    .checkbox-group {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin: 0.8rem 0;
+    }
+    
+    .checkbox-group input[type="checkbox"] {
+      width: auto;
+      margin: 0;
+    }
+    
+    /* Features Grid */
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin: 1.5rem 0;
+      justify-items: center;
+      align-items: center;
+      width: 100%;
+    }
+    
+    .feature-card {
+      text-align: center;
+      padding: 1.5rem;
+      background: var(--card-bg);
+      border-radius: 15px;
+      box-shadow: var(--shadow);
+      transition: all 0.3s ease;
+    }
+    
+    .feature-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-hover);
+    }
+    
+    .feature-icon {
+      font-size: 2.5rem;
+      margin-bottom: 0.7rem;
+    }
+    
+    .feature-card h3 {
+      color: var(--primary-color);
+      margin-bottom: 1rem;
+    }
+    
+    /* Stats */
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+      margin: 1.5rem 0;
+      justify-items: stretch;
+      align-items: stretch;
+      width: 100%;
+    }
+    .stat-card {
+      text-align: center;
+      padding: 1.5rem;
+      background: var(--card-bg);
+      color: var(--text-color);
+      font-weight: bold;
+      border-radius: 20px;
+      box-shadow: var(--shadow);
+      border: 1px solid var(--border-color);
+      display: block;
+      margin: 0;
+    }
+    
+    .stat-number {
+      font-size: 2.5rem;
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+    }
+    
+    .stat-label {
+      font-size: 1.1rem;
+      opacity: 0.9;
+    }
+    
+    /* Footer */
+    footer {
+      background: var(--card-bg);
+      padding: 1.5rem 0;
+      border-top: 1px solid var(--border-color);
+      margin-top: 2rem;
+    }
+    
+    .footer-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 1.5rem;
+      justify-items: center;
+      align-items: center;
+      width: 100%;
+    }
+    
+    .footer-section h4 {
+      margin-bottom: 0.8rem;
+    }
+    
+    .footer-section ul {
+      list-style: none;
+    }
+    
+    .footer-section ul li {
+      margin-bottom: 0.5rem;
+    }
+    
+    .footer-section ul li a {
+      color: var(--text-color);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    
+    .footer-section ul li a:hover {
+      color: var(--primary-color);
+    }
+    
+    .footer-bottom {
+      text-align: center;
+      padding-top: 1.3rem;
+      border-top: 1px solid var(--border-color);
+      color: var(--text-color);
+      opacity: 0.8;
+    }
+    
+    /* Mobile Responsive */
+    @media (max-width: 768px) {
+      .nav-toggle {
+        display: block;
+      }
+      
+      nav {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--card-bg);
+        box-shadow: var(--shadow);
+        padding: 1rem;
+        gap: 1rem;
+      }
+      
+      nav.active {
+        display: flex;
+      }
+      
+      .hero-text {
+        text-align: center;
+      }
+      
+      .hero-text h1 {
+        font-size: 2.2rem;
+      }
+      
+      .hero-content {
+        flex-direction: column;
+        text-align: center;
+      }
+      
+      .grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .features {
+        grid-template-columns: 1fr;
+      }
+      
+      .stats {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      
+      .section-title {
+        font-size: 1.2rem;
+      }
+      
+      .container {
+        padding: 0 0.3rem;
+      }
+      
+      section {
+        padding: 0.7rem 0;
+      }
+      
+      .hero {
+        padding: 1rem 0;
+        margin: 0.5rem 0;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .btn {
+        padding: 0.5rem 1rem;
+        font-size: 0.85rem;
+      }
+      .section-title {
+        font-size: 1rem;
+      }
+    }
+    
+    /* --- MODERATELY COMPACT LAYOUT TWEAKS --- */
+    header {
+      padding: 0.8rem 0;
+    }
+    .header-container {
+      padding: 0 1rem;
+    }
+    nav {
+      gap: 1.5rem;
+    }
+    .theme-toggle {
+      padding: 0.5rem;
+      font-size: 1.1rem;
+    }
+    .container {
+      padding: 0 1rem;
+    }
+    .hero {
+      padding: 3rem 0;
+      margin: 1.5rem 0;
+    }
+    .hero-content {
+      gap: 2rem;
+    }
+    .hero-text h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.8rem;
+    }
+    .hero-text p {
+      margin-bottom: 1.3rem;
+    }
+    .btn {
+      padding: 0.9rem 1.7rem;
+      font-size: 1rem;
+    }
+    .card {
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+    .card h3 {
+      margin-bottom: 0.9rem;
+      font-size: 1.3rem;
+    }
+    .card p {
+      margin-bottom: 0.9rem;
+    }
+    .grid {
+      gap: 1.5rem;
+      margin: 1.5rem 0;
+    }
+    .features {
+      gap: 1.5rem;
+      margin: 1.5rem 0;
+    }
+    .feature-card {
+      padding: 1.5rem;
+    }
+    .feature-icon {
+      font-size: 2.5rem;
+      margin-bottom: 0.7rem;
+    }
+    .stats {
+      gap: 1.5rem;
+      margin: 1.5rem 0;
+    }
+    .stat-card {
+      padding: 1.5rem;
+    }
+    .stat-number {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+    .section-title {
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+    }
+    
+    .section-subtitle {
+      font-size: 1.1rem;
+      margin-bottom: 1.3rem;
+      color: var(--text-color);
+      opacity: 0.8;
+    }
+    
+    section {
+      padding: 1.3rem 0;
+    }
+    
+    form {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    
+    .form-group {
+      margin-bottom: 1.1rem;
+    }
+    
+    label {
+      margin-bottom: 0.4rem;
+    }
+    
+    input, textarea, select {
+      padding: 0.9rem;
+      font-size: 1rem;
+    }
+    
+    .checkbox-group {
+      gap: 0.5rem;
+      margin: 0.8rem 0;
+    }
+    
+    .footer-content {
+      gap: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+    
+    .footer-section h4 {
+      margin-bottom: 0.8rem;
+    }
+    
+    .footer-section ul li {
+      margin-bottom: 0.5rem;
+    }
+    
+    .footer-bottom {
+      padding-top: 1.3rem;
+    }
+    /* Utility Classes */
+    .text-center { text-align: center !important; }
+    .text-left { text-align: left; }
+    .text-right { text-align: right; }
+    .mb-1 { margin-bottom: 0.8rem; }
+    .mb-2 { margin-bottom: 1.5rem; }
+    .mt-1 { margin-top: 0.8rem; }
+    .mt-2 { margin-top: 1.5rem; }
+    @media (max-width: 768px) {
+      .container {
+        padding: 0 0.7rem;
+      }
+      section {
+        padding: 0.8rem 0;
+      }
+      .hero {
+        padding: 1.5rem 0;
+        margin: 0.7rem 0;
+      }
+      .section-title {
+        font-size: 1.4rem;
+      }
+    }
+    @media (max-width: 480px) {
+      .btn {
+        padding: 0.7rem 1.2rem;
+        font-size: 0.95rem;
+      }
+      .section-title {
+        font-size: 1.1rem;
+      }
+    }
+    /* --- END MODERATELY COMPACT LAYOUT TWEAKS --- */
+    .cta-buttons {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 2rem;
+    }
+    .cta-buttons a {
+      margin-bottom: 0.7rem;
+    }
+    /* Contact form wrapper for centering and max width */
+    .contact-form-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      width: 100%;
+      margin: 0 auto;
+      max-width: 600px;
+    }
+    .contact-form-wrapper form {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 0.2rem;
+    }
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      width: 100%;
+      margin-bottom: 0.7rem;
+    }
+    .form-group label {
+      margin-bottom: 0.15rem;
+      text-align: left;
+      font-size: 0.98rem;
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      box-sizing: border-box;
+      padding: 0.6rem 0.7rem;
+      font-size: 0.98rem;
+    }
+    .checkbox-group {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin: 0.8rem 0;
+      width: 100%;
+    }
+    .checkbox-group input[type="checkbox"] {
+      margin-top: 0;
+      margin-right: 0.4rem;
+      flex-shrink: 0;
+    }
+    .checkbox-group label {
+      margin-bottom: 0;
+      text-align: left;
+      font-size: 0.97rem;
+      line-height: 1.4;
+      flex: 1;
+    }
+    /* Ensure all section headings are centered */
+    .section-title, .section-subtitle, h2.section-title, h3.section-title {
+      text-align: center !important;
+      width: 100%;
+      margin-left: auto;
+      margin-right: auto;
+      display: block;
+    }
+    /* Responsive: label above input for mobile */
+    @media (max-width: 600px) {
+      .container {
+        padding-left: 0.7rem;
+        padding-right: 0.7rem;
+      }
+      .contact-form-wrapper {
+        max-width: 100%;
+        padding: 0 0.5rem;
+      }
+      .text-center.mt-2 > form {
+        max-width: 100% !important;
+        width: 100% !important;
+        padding: 0 0.5rem !important;
+        box-sizing: border-box;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .text-center.mt-2 .checkbox-group {
+        flex-direction: row;
+        align-items: center;
+        width: 100%;
+        font-size: 0.97rem;
+        justify-content: flex-start;
+      }
+      .text-center.mt-2 .checkbox-group label {
+        font-size: 0.97rem;
+        text-align: left;
+        margin-bottom: 0;
+        flex: 1;
+      }
+      .form-group {
+        width: 100%;
+      }
+      .checkbox-group {
+        flex-direction: row;
+        align-items: center;
+      }
+      .checkbox-group label {
+        font-size: 0.97rem;
+      }
+    }
+    /* Ensure all h2, h3, h4 are centered globally */
+    h2, h3, h4 {
+      text-align: center;
+    }
+    h1, h2, h3, h4 {
+      color: #000 !important;
+      font-weight: 700 !important;
+    }
+    /* Responsive adjustments for headings and nav */
+    @media (max-width: 600px) {
+      .logo {
+        font-size: 1.3rem;
+      }
+      nav a {
+        font-size: 1rem;
+      }
+      h1, .hero-text h1 {
+        font-size: 2rem;
+      }
+      .section-title {
+        font-size: 1.3rem;
+      }
+    }
+    @media (max-width: 768px) {
+      .footer-section {
+        text-align: left !important;
+      }
+    }
+    .hero-main-heading-small {
+      font-family: 'Inter', 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+      font-size: 2rem;
+      font-weight: 900;
+      color: #000;
+      letter-spacing: -1px;
+      line-height: 1.1;
+      text-align: center;
+    }
+    @media (max-width: 600px) {
+      .hero-main-heading-small {
+        font-size: 1.3rem;
+      }
+    }
+    .card.left-align {
+      text-align: left !important;
+      align-items: flex-start !important;
+    }
+    @media (max-width: 700px) {
+      .footer-content {
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center !important;
+      }
+      .footer-section {
+        align-items: center !important;
+        text-align: center !important;
+        margin-bottom: 1.5rem;
+      }
+    }
+    .about-mission-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: start;
+      gap: 1.5rem;
+    }
+    @media (max-width: 768px) {
+      .about-mission-grid {
+        grid-template-columns: 1fr !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-container">
+      <div class="logo">LighthouseTheory</div>
+      <button class="nav-toggle" onclick="toggleNav()">☰</button>
+      <nav id="nav">
+        <a href="#home">Home</a>
+        <a href="#stages">Life Stages</a>
+        <div class="dropdown" id="toolsDropdown">
+          <a href="#tools" class="dropdown-toggle" onclick="toggleToolsDropdown(event)">Tools</a>
+          <div class="dropdown-menu">
+            <a href="#sip-calculator">Smart SIP Calculator</a>
+            <a href="#lumpsum-calculator">Lumpsum Calculator</a>
+            <a href="#emi-calculator">EMI Calculator</a>
+            <a href="#goal-planner">Goal Planner</a>
+            <a href="#fire-calculator">FIRE Calculator</a>
+            <a href="#planners-excel">Excel Tools</a>
+          </div>
+        </div>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+        <a href="#kyc">KYC</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- KYC Section -->
+    <section id="kyc">
+      <div class="container">
+        <div class="card text-center">
+          <div class="hero-main-heading-small" style="margin-bottom: 1rem;">KYC Status Check</div>
+          <p>Check your KYC status before starting your investment journey</p>
+          <a href="https://camskra.com/" target="_blank" class="btn">Check KYC Status</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+      <div class="container">
+        <div class="hero-content animate-fade-in">
+          <div class="hero-text">
+            <div class="hero-main-heading">Be the captain.</div>
+            <div class="hero-main-heading nowrap" style="margin-bottom: 1.5rem;">We’ll be your Lighthouse.</div>
+            <p>
+              In a sea of financial noise, we provide the light.<br>
+              Curated advice, smart tools, and clear insights to keep your investments on course. Navigate with confidence. Invest with purpose.
+            </p>
+            <div class="cta-buttons">
+              <a href="#stages" class="btn btn-outline">🚀 Find Your Stage</a>
+              <a href="#tools" class="btn btn-outline">🧮 Explore Tools</a>
+              <a href="#contact" class="btn btn-outline">💬 Get Personal Advice</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section>
+      <div class="container">
+        <div class="stats">
+          <div class="stat-card">
+            <div class="stat-number">100%</div>
+            <div class="stat-label">Commitment to Learning</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">Fresh</div>
+            <div class="stat-label">Perspective</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">AMFI</div>
+            <div class="stat-label">Certified</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">24/7</div>
+            <div class="stat-label">Available to Help</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services">
+      <div class="container">
+        <h2 class="section-title">Our Services</h2>
+        <div class="features">
+          <div class="feature-card">
+            <div class="feature-icon">📊</div>
+            <h3>SIP Planning</h3>
+            <p>Learn and implement Systematic Investment Plans perfect for students and young professionals starting their investment journey.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">🎯</div>
+            <h3>Goal-Based Planning</h3>
+            <p>Set and achieve your financial goals with simple, practical strategies tailored for beginners.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">💡</div>
+            <h3>Financial Education</h3>
+            <p>Learn the basics of investing, mutual funds, and personal finance in simple, easy-to-understand terms.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">🛡️</div>
+            <h3>ELSS Investments</h3>
+            <p>Understand and invest in tax-saving mutual funds that can help you save money while building wealth.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">🌱</div>
+            <h3>Small Investment Planning</h3>
+            <p>Start your investment journey with small amounts that fit your student budget and grow over time.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">📚</div>
+            <h3>Learning Together</h3>
+            <p>As I learn and grow in this field, I share my knowledge and insights with you along the way.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tools & Calculators Section -->
+    <section id="tools">
+      <div class="container">
+        <h2 class="section-title text-center">Explore Our Tools & Calculators</h2>
+        <div class="grid">
+          <div class="card" id="sip-calculator">
+            <h3>Smart SIP Calculator</h3>
+            <p>Calculate your SIP returns and plan your investments effectively.</p>
+            <div class="form-group">
+              <label>Monthly Investment (₹)</label>
+              <input type="number" id="sipAmount" placeholder="5000" value="5000">
+            </div>
+            <div class="form-group">
+              <label>Expected Return (%)</label>
+              <input type="number" id="sipReturn" placeholder="12" value="12">
+            </div>
+            <div class="form-group">
+              <label>Investment Period (Years)</label>
+              <input type="number" id="sipYears" placeholder="10" value="10">
+            </div>
+            <div class="form-group">
+              <label>Step-up Percentage (per year, optional)</label>
+              <input type="number" id="sipStepUp" placeholder="0" value="0" min="0">
+            </div>
+            <button class="btn" onclick="calculateSIP()">Calculate SIP</button>
+            <div id="sipResult" class="mt-2"></div>
+          </div>
+          <div class="card" id="lumpsum-calculator">
+            <h3>Lumpsum Calculator</h3>
+            <p>Calculate the future value of a lumpsum investment.</p>
+            <div class="form-group">
+              <label>Lumpsum Investment (₹)</label>
+              <input type="number" id="lumpSumPrincipal" placeholder="100000" value="100000">
+            </div>
+            <div class="form-group">
+              <label>Rate of Return (% per annum)</label>
+              <input type="number" id="lumpSumRate" placeholder="12" value="12">
+            </div>
+            <div class="form-group">
+              <label>Duration (Years)</label>
+              <input type="number" id="lumpSumYears" placeholder="10" value="10">
+            </div>
+            <!-- Compounding frequency removed for simplicity; yearly compounding assumed -->
+            <button class="btn" onclick="calculateLumpSum()" aria-label="Calculate Lumpsum">Calculate Lumpsum</button>
+            <div id="lumpSumResult" class="mt-2"></div>
+          </div>
+          <div class="card" id="emi-calculator">
+            <h3>EMI Calculator</h3>
+            <p>Estimate your monthly loan repayments easily.</p>
+            <div class="form-group">
+              <label>Loan Amount (₹)</label>
+              <input type="number" id="emiAmount" placeholder="100000" value="100000">
+            </div>
+            <div class="form-group">
+              <label>Interest Rate (%)</label>
+              <input type="number" id="emiRate" placeholder="10" value="10">
+            </div>
+            <div class="form-group">
+              <label>Tenure (Years)</label>
+              <input type="number" id="emiYears" placeholder="5" value="5">
+            </div>
+            <button class="btn" onclick="calculateEMI()">Calculate EMI</button>
+            <div id="emiResult" class="mt-2"></div>
+          </div>
+        </div>
+        <div class="goal-fire-row" style="display: flex; flex-wrap: wrap; gap: 1.5rem; margin-top: 1.5rem;">
+          <div class="card" id="goal-planner" style="flex: 1 1 350px; min-width: 300px; height: 100%; display: flex; flex-direction: column; justify-content: stretch;">
+            <h3>Goal Planner</h3>
+            <p>Set your financial goals and get a step-by-step plan.</p>
+            <div class="form-group">
+              <label>Goal Amount (₹)</label>
+              <input type="number" id="goalAmount" placeholder="500000" value="500000">
+            </div>
+            <div class="form-group">
+              <label>Years to Goal</label>
+              <input type="number" id="goalYears" placeholder="10" value="10">
+            </div>
+            <div class="form-group">
+              <label>Expected Return (%)</label>
+              <input type="number" id="goalReturn" placeholder="12" value="12">
+            </div>
+            <div class="form-group">
+              <label>Step-up SIP Percentage (per year, optional)</label>
+              <input type="number" id="goalStepUp" placeholder="0" value="0" min="0">
+            </div>
+            <button class="btn" onclick="calculateGoal()">Plan Goal</button>
+            <div id="goalResult" class="mt-2"></div>
+          </div>
+          <div class="card" id="fire-calculator" style="flex: 2 1 500px; min-width: 350px; display: flex; flex-direction: column; justify-content: stretch;">
+            <h3>FIRE Calculator</h3>
+            <p>Plan your retirement corpus with inflation, age, and savings growth.</p>
+            <div class="fire-flex-row" style="display: flex; gap: 1rem;">
+              <div style="flex: 1 1 0; min-width: 0;">
+                <div class="form-group">
+                  <label>Monthly Expenses (₹)</label>
+                  <input type="number" id="fireExpenses" placeholder="50000" value="50000">
+                </div>
+                <div class="form-group">
+                  <label>Current Age</label>
+                  <input type="number" id="fireCurrentAge" placeholder="30" value="30">
+                </div>
+                <div class="form-group">
+                  <label>Retirement Age</label>
+                  <input type="number" id="fireRetirementAge" placeholder="60" value="60">
+                </div>
+                <div class="form-group">
+                  <label>Life Expectancy</label>
+                  <input type="number" id="fireLifeExpectancy" placeholder="85" value="85">
+                </div>
+                <div class="form-group">
+                  <label>Inflation Rate (%)</label>
+                  <input type="number" id="fireInflation" placeholder="6" value="6">
+                </div>
+              </div>
+              <div style="flex: 1 1 0; min-width: 0;">
+                <div class="form-group">
+                  <label>Corpus Till Date (₹)</label>
+                  <input type="number" id="fireCorpus" placeholder="0" value="0">
+                </div>
+                <div class="form-group">
+                  <label>Yearly Savings for Retirement (₹)</label>
+                  <input type="number" id="fireYearlySavings" placeholder="100000" value="100000">
+                </div>
+                <div class="form-group">
+                  <label>Yearly Increase in Invested Amount (%)</label>
+                  <input type="number" id="fireSavingsIncrease" placeholder="5" value="5">
+                </div>
+                <div class="form-group">
+                  <label>Expected Rate of Return (%)</label>
+                  <input type="number" id="fireReturn" placeholder="10" value="10">
+                </div>
+              </div>
+            </div>
+            <button class="btn" onclick="calculateFIRE()">Calculate FIRE</button>
+            <div id="fireResult" class="mt-2"></div>
+          </div>
+        </div>
+          </div>
+      <div class="container" style="margin-top: 2rem; margin-bottom: 2rem;">
+        <div class="card" id="planners-excel" style="max-width: 600px; margin: 0 auto;">
+          <h3>Excel Tools</h3>
+          <p>Download ready-made Excel tools to organize your finances, track goals, and plan investments.</p>
+          <button class="btn" disabled style="opacity:0.6;cursor:not-allowed;">Coming Soon</button>
+        </div>
+      </div>
+      <style>
+        @media (max-width: 900px) {
+          .fire-flex-row {
+            flex-direction: column !important;
+          }
+        }
+      </style>
+    </section>
+
+    <!-- Finance for Every Stage Section -->
+    <section id="stages">
+      <div class="container">
+        <h2 class="section-title text-center">Finance for Every Life Stage</h2>
+        <p class="section-subtitle text-center">Select your current stage for tailored blogs, tools, and resources.</p>
+        <div class="grid">
+          <div class="card"><h3>First Job</h3><p>Just started earning? Learn to budget, save, and invest smartly from day one.</p><small>Coming Soon</small></div>
+          <div class="card"><h3>Freelancer</h3><p>Manage irregular income, taxes, and build a safety net for your freelance journey.</p><small>Coming Soon</small></div>
+          <div class="card"><h3>Family & Marriage</h3><p>Plan for family, children, and shared goals with confidence.</p><small>Coming Soon</small></div>
+          <div class="card"><h3>Mid-Career</h3><p>Maximize your peak earning years and secure your future.</p><small>Coming Soon</small></div>
+          <div class="card"><h3>Pre-Retirement</h3><p>Prepare for a smooth transition to retirement and beyond.</p><small>Coming Soon</small></div>
+          <div class="card"><h3>Entrepreneur</h3><p>Build, grow, and protect your business and personal wealth.</p><small>Coming Soon</small></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section id="blog">
+      <div class="container">
+        <h2 class="section-title">Latest Insights</h2>
+        <div class="grid">
+          <div class="card">
+            <h3>Starting Your Investment Journey</h3>
+            <p>"Your first Rs.500 SIP, Explained Simply"</p>
+            <p>confused about how to start investing? Learn how even a small SIP can build wealth over time, with a step-by-step guide.</p>
+            <small>Coming Soon</small>
+          </div>
+          <div class="card">
+            <h3>Guide to ELSS</h3>
+            <p>ELSS vs. PPF, What's Best for You?</p>
+            <p>Understand the key differences between ELSS and PPF, and decide which one suits your financial goals best.</p>
+            <small>Coming Soon</small>
+          </div>
+          <div class="card">
+            <h3>Building Your First Portfolio</h3>
+            <p>"How to Start Investing Without Overthinking"</p>
+            <p>Feeling overwhelmed with to many options? Learn a simple framework to set goals, understand your risk comfort, and take your first confident step as an investor.</p>
+            <small>Coming Soon</small>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+      <div class="container">
+        <div class="grid about-mission-grid">
+          <div class="card">
+            <h2 class="section-title">About</h2>
+            
+            <p>Lighthouse Theory is more than just a name — it's a belief. Just like a lighthouse guides ships safely through uncertain waters, this platform is here to guide individuals through the often confusing world of personal finance and investments.</p>
+            <p>Founded by a next-gen Mutual Fund Distributor (<strong>ARN-315778</strong>) who’s also a student on a continuous learning journey, Lighthouse Theory blends traditional financial wisdom with modern tools, technology, and transparency. This isn't a static platform — it's a growing ecosystem, built by someone who's learning, adapting, and evolving with the financial world every day.</p>
+            <p>Whether you're just starting your investment journey or looking to optimize your current financial plan, Lighthouse Theory is your digital companion — grounded in trust, backed by data, and designed for real people.</p>
+            <div class="mt-2">
+              <a href="https://www.linkedin.com/in/kavya-nagwekar-16k?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" class="btn btn-secondary">Connect on LinkedIn</a>
+            </div>
+          </div>
+          <div class="card">
+            <h2 class="section-title">Our Mission</h2>
+            <p>To illuminate the path toward financial clarity for individuals and families using the right mix of human insight and digital tools.</p>
+            <p><strong style="display:block;text-align:center;">What We Offer</strong></p>
+            <p style="text-align:justify; margin-bottom:1.2rem;">
+              Smart Calculators to help you plan your SIPs, goals, and retirement. Excel-based Tools for in-depth planning and tracking. Newsletters that simplify market trends and personal finance tips. A growing library of digital resources, educational content, and more on the way.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="text-center">
+      <div class="container">
+        <h2 class="section-title text-center">Let's Start Your Investment Journey</h2>
+        <p class="section-subtitle text-center">As a fellow student, I understand the challenges of starting to invest. Let's learn and grow together!</p>
+        <div class="contact-form-wrapper">
+          <form action="https://formsubmit.co/youremail@example.com" method="POST">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_next" value="https://yourdomain.com/thanks.html">
+            <div class="form-group">
+              <label for="name">Your Name *</label>
+              <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone Number *</label>
+              <input type="tel" id="phone" name="phone" required>
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address *</label>
+              <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+              <label for="service">Service Interested In</label>
+              <select id="service" name="service">
+                <option value="">Select Service</option>
+                <option value="Getting Started">Getting Started with Investing</option>
+                <option value="SIP Planning">SIP Planning for Beginners</option>
+                <option value="ELSS Investments">ELSS for Tax Saving</option>
+                <option value="Small Investment Planning">Small Investment Planning</option>
+                <option value="Financial Education">Financial Education</option>
+                <option value="Goal Planning">Goal-Based Planning</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="message">Message / Questions</label>
+              <textarea id="message" name="message" rows="4" placeholder="Tell me about your financial goals or any questions you have as a beginner investor..."></textarea>
+            </div>
+            <div class="checkbox-group" style="justify-content: center;">
+              <input type="checkbox" id="consent" name="consent" required aria-label="Consent to be contacted">
+              <label for="consent">I'm interested in learning about investments and understand that mutual fund investments are subject to market risks. I consent to be contacted.</label>
+            </div>
+            <button type="submit" class="btn" aria-label="Submit Contact Form">Start Learning Together</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section>
+        
+        <div class="text-center mt-2">
+          <h3>Share Your Experience</h3>
+          <form action="https://formsubmit.co/youremail@example.com" method="POST" style="max-width: 500px;">
+            <input type="hidden" name="_captcha" value="false">
+            <div class="form-group">
+              <input type="text" name="testimonial_name" placeholder="Your Name (Optional)" style="font-family: inherit; font-size: 0.98rem; padding: 0.6rem 0.7rem;">
+            </div>
+            <div class="form-group">
+              <textarea name="testimonial" placeholder="Share your experience learning about investments with me..." rows="4" required></textarea>
+            </div>
+            <div class="checkbox-group">
+              <input type="checkbox" required aria-label="Consent to use testimonial">
+              <label>I consent to having my testimonial used on this website.</label>
+            </div>
+            <button type="submit" class="btn" aria-label="Submit Testimonial">Submit Testimonial</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Example Chat-Style Blog Thread -->
+    <section>
+      <div class="container">
+        <div class="card left-align" style="max-width:400px;margin:auto;">
+          <h3>Why is ELSS better than PPF?</h3>
+          <div id="chatThread" style="background:#f5f5f5;border-radius:10px;padding:1rem;">
+            <div style="margin-bottom:1rem;">
+              <b>You:</b> Should I invest in ELSS or PPF?<br>
+              <b>Finance Friend:</b> ELSS has a shorter lock-in (3 years) and potential for higher returns, but PPF is safer.<br>
+              <b>You:</b> What about taxes?<br>
+              <b>Finance Friend:</b> Both give 80C benefit, but ELSS returns are taxed as LTCG after ₹1 lakh.<br>
+              <b>You:</b> Which is better for me?<br>
+              <b>Finance Friend:</b> If you want higher growth and can take some risk, try ELSS. For safety, pick PPF!
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End of new sections -->
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h4>LighthouseTheory</h4>
+          <p>Your learning partner for financial growth and investment education.</p>
+          <p><strong>AMFI ARN: 123456</strong></p>
+          <p><em>Learning and growing together!</em></p>
+        </div>
+        <div class="footer-section">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="#services">Beginner SIP Planning</a></li>
+            <li><a href="#services">Financial Education</a></li>
+            <li><a href="#services">Guide to ELSS</a></li>
+            <li><a href="#services">Goal-Based Planning</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="#calculators">SIP Calculator</a></li>
+            <li><a href="#calculators">FIRE Calculator</a></li>
+            <li><a href="#blog">Financial Insights</a></li>
+            <li><a href="#kyc">KYC Status</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Contact</h4>
+          <ul>
+            <li>Email: <a href="mailto:connect.lighthousetheory@gmail.com">connect.lighthousetheory@gmail.com</a></li>
+            <li><a href="https://www.linkedin.com/in/kavya-nagwekar-16k?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank">LinkedIn</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 LighthouseTheory. All rights reserved.</p>
+        <p>Mutual fund investments are subject to market risks. Read all scheme-related documents carefully before investing.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // =============================
+    // Navigation & Theme Functions
+    // =============================
+
+    // Toggle navigation menu for mobile
+    function toggleNav() {
+      document.getElementById('nav').classList.toggle('active');
+    }
+
+    // Toggle Tools Dropdown on click
+    function toggleToolsDropdown(event) {
+      event.preventDefault();
+      event.stopPropagation();
+      var dropdown = document.getElementById('toolsDropdown');
+      dropdown.classList.toggle('open');
+    }
+
+    // Close dropdown if clicking outside
+    document.addEventListener('click', function(e) {
+      var dropdown = document.getElementById('toolsDropdown');
+      if (dropdown && dropdown.classList.contains('open')) {
+        if (!dropdown.contains(e.target)) {
+          dropdown.classList.remove('open');
+        }
+      }
+    });
+
+    // Smooth scroll with offset for Tools dropdown links
+    document.querySelectorAll('.dropdown-menu a').forEach(function(link) {
+      link.addEventListener('click', function(e) {
+        var targetId = this.getAttribute('href').replace('#', '');
+        var target = document.getElementById(targetId);
+        if (target) {
+          e.preventDefault();
+          var header = document.querySelector('header');
+          var headerHeight = header ? header.offsetHeight : 0;
+          var rect = target.getBoundingClientRect();
+          var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+          var top = rect.top + scrollTop - headerHeight - 10;
+          window.scrollTo({ top: top, behavior: 'smooth' });
+          var dropdown = document.getElementById('toolsDropdown');
+          if (dropdown) dropdown.classList.remove('open');
+        }
+      });
+    });
+
+    // =============================
+    // Calculator Functions
+    // =============================
+
+    // --- SIP Calculator ---
+    function calculateSIP() {
+      const amount = parseFloat(document.getElementById('sipAmount').value);
+      const rate = parseFloat(document.getElementById('sipReturn').value);
+      const years = parseFloat(document.getElementById('sipYears').value);
+      const stepUp = parseFloat(document.getElementById('sipStepUp').value) || 0;
+      const result = document.getElementById('sipResult');
+      if (!amount || !rate || !years || amount <= 0 || rate <= 0 || years <= 0) {
+        result.innerHTML = '<p style="color: var(--warning-color);">Please enter positive values in all fields.</p>';
+        return;
+      }
+      const i = rate / 100 / 12;
+      const n = years * 12;
+      const fv = amount * ((Math.pow(1 + i, n) - 1) / i) * (1 + i);
+      const invested = amount * n;
+      const returns = fv - invested;
+      // Step-up SIP calculation
+      let stepUpFV = 0;
+      let stepUpInvested = 0;
+      let currentAmount = amount;
+      for (let month = 1; month <= n; month++) {
+        stepUpFV += currentAmount * Math.pow(1 + i, n - month + 1);
+        stepUpInvested += currentAmount;
+        if (stepUp > 0 && month % 12 === 0) {
+          currentAmount += currentAmount * (stepUp / 100);
+        }
+      }
+      const stepUpReturns = stepUpFV - stepUpInvested;
+      result.innerHTML = `<p>
+        <strong>Regular SIP</strong><br>
+        Invested Amount: <strong>₹${invested.toFixed(2)}</strong><br>
+        Estimated Returns: <strong>₹${returns.toFixed(2)}</strong><br>
+        Future Value: <strong>₹${fv.toFixed(2)}</strong>
+        <br><br>
+        <strong>Step-up SIP</strong><br>
+        Invested Amount: <strong>₹${stepUpInvested.toFixed(2)}</strong><br>
+        Estimated Returns: <strong>₹${stepUpReturns.toFixed(2)}</strong><br>
+        Future Value: <strong>₹${stepUpFV.toFixed(2)}</strong>
+        <br><br>
+        <strong>Difference in Future Value:</strong> <span style="color: var(--success-color);">₹${(stepUpFV - fv).toFixed(2)}</span>
+      </p>`;
+    }
+
+    // --- Lumpsum Calculator ---
+    function calculateLumpSum() {
+      const principal = parseFloat(document.getElementById('lumpSumPrincipal').value);
+      const rate = parseFloat(document.getElementById('lumpSumRate').value);
+      const years = parseFloat(document.getElementById('lumpSumYears').value);
+      const result = document.getElementById('lumpSumResult');
+      if (!principal || !rate || !years || principal <= 0 || rate <= 0 || years <= 0) {
+        result.innerHTML = '<p style="color: var(--warning-color);">Please enter positive values in all fields.</p>';
+        return;
+      }
+      const r = rate / 100;
+      const n = 1;
+      const A = principal * Math.pow(1 + r / n, n * years);
+      const gain = A - principal;
+      result.innerHTML = `<p>Future Value: <strong>₹${A.toFixed(2)}</strong><br>Estimated Returns: <strong>₹${gain.toFixed(2)}</strong></p>`;
+    }
+
+    // --- EMI Calculator ---
+    function calculateEMI() {
+      const amount = parseFloat(document.getElementById('emiAmount').value);
+      const rate = parseFloat(document.getElementById('emiRate').value);
+      const years = parseFloat(document.getElementById('emiYears').value);
+      const result = document.getElementById('emiResult');
+      if (!amount || !rate || !years || amount <= 0 || rate <= 0 || years <= 0) {
+        result.innerHTML = '<p style="color: var(--warning-color);">Please enter positive values in all fields.</p>';
+        return;
+      }
+      const monthlyRate = rate / 100 / 12;
+      const months = years * 12;
+      const emi = (amount * monthlyRate * Math.pow(1 + monthlyRate, months)) / (Math.pow(1 + monthlyRate, months) - 1);
+      const totalPayment = emi * months;
+      const totalInterest = totalPayment - amount;
+      result.innerHTML = `<p>
+        Monthly EMI: <strong>₹${emi.toFixed(2)}</strong><br>
+        Total Interest Payable: <strong>₹${totalInterest.toFixed(2)}</strong><br>
+        Total Amount Payable: <strong>₹${totalPayment.toFixed(2)}</strong>
+      </p>`;
+    }
+
+    // --- Goal Planner Calculator ---
+    function calculateGoal() {
+      const goal = parseFloat(document.getElementById('goalAmount').value);
+      const years = parseFloat(document.getElementById('goalYears').value);
+      const rate = parseFloat(document.getElementById('goalReturn').value);
+      const stepUp = parseFloat(document.getElementById('goalStepUp').value) || 0;
+      const result = document.getElementById('goalResult');
+      if (!goal || !years || !rate || goal <= 0 || years <= 0 || rate <= 0) {
+        result.innerHTML = '<p style="color: var(--warning-color);">Please enter positive values in all fields.</p>';
+        return;
+      }
+      const monthlyRate = rate / 100 / 12;
+      const months = years * 12;
+      // Regular SIP calculation
+      const sip = goal * monthlyRate / (Math.pow(1 + monthlyRate, months) - 1);
+      // Step-up SIP calculation (step-up every year)
+      let stepUpSIP = 0;
+      if (stepUp > 0) {
+        let low = 0, high = goal, mid;
+        for (let iter = 0; iter < 30; iter++) {
+          mid = (low + high) / 2;
+          let tempFV = 0;
+          let tempSIP = mid;
+          for (let m = 1; m <= months; m++) {
+            tempFV += tempSIP * Math.pow(1 + monthlyRate, months - m + 1);
+            if (stepUp > 0 && m % 12 === 0) {
+              tempSIP += tempSIP * (stepUp / 100);
+            }
+          }
+          if (tempFV > goal) {
+            high = mid;
+          } else {
+            low = mid;
+          }
+        }
+        stepUpSIP = mid;
+      }
+      result.innerHTML = `<p>
+        <strong>Regular SIP Required:</strong> ₹${sip.toFixed(2)}<br>
+        <strong>Step-up SIP Required:</strong> ₹${stepUp > 0 ? stepUpSIP.toFixed(2) : 'N/A'}
+        ${stepUp > 0 ? `<br><small>Step-up SIP increases by ${stepUp}% every year.</small>` : ''}
+      </p>`;
+    }
+
+    // --- FIRE Calculator ---
+    function calculateFIRE() {
+      const expenses = parseFloat(document.getElementById('fireExpenses').value);
+      const currentAge = parseFloat(document.getElementById('fireCurrentAge').value);
+      const retirementAge = parseFloat(document.getElementById('fireRetirementAge').value);
+      const inflation = parseFloat(document.getElementById('fireInflation').value);
+      const corpusTillDate = parseFloat(document.getElementById('fireCorpus').value);
+      const yearlySavings = parseFloat(document.getElementById('fireYearlySavings').value);
+      const expectedReturn = parseFloat(document.getElementById('fireReturn').value);
+      const result = document.getElementById('fireResult');
+      if (
+        isNaN(expenses) || isNaN(currentAge) || isNaN(retirementAge) ||
+        isNaN(inflation) || isNaN(corpusTillDate) || isNaN(yearlySavings) ||
+        isNaN(expectedReturn) ||
+        expenses <= 0 || currentAge < 0 || retirementAge <= 0 ||
+        yearlySavings < 0 || expectedReturn <= 0 || retirementAge <= currentAge
+      ) {
+        result.innerHTML = '<p style="color: var(--warning-color);">Please enter valid, positive values. Retirement age must be greater than current age.</p>';
+        return;
+      }
+      const yearsToRetire = retirementAge - currentAge;
+      const futureMonthlyExpense = expenses * Math.pow(1 + inflation / 100, yearsToRetire);
+      const inflatedAnnualExpense = futureMonthlyExpense * 12;
+      const fireCorpus = inflatedAnnualExpense * 25;
+      const r = expectedReturn / 100;
+      const fvCurrent = corpusTillDate * Math.pow(1 + r, yearsToRetire);
+      const fvSavings = yearlySavings * ((Math.pow(1 + r, yearsToRetire) - 1) / r) * (1 + r);
+      const totalWealth = fvCurrent + fvSavings;
+      const gap = fireCorpus - totalWealth;
+      let advice = '';
+      if (gap > 0) {
+        advice = `<span style="color: var(--warning-color);">You need to save/invest more, or seek a higher return, to reach your FIRE goal.</span>`;
+      } else {
+        advice = `<span style="color: var(--success-color);">Congratulations! You are on track for your FIRE goal.</span>`;
+      }
+      result.innerHTML = `
+        <p>
+          <strong>Inflation-adjusted Monthly Expense at Retirement:</strong> ₹${futureMonthlyExpense.toLocaleString(undefined, {maximumFractionDigits: 0})}<br>
+          <strong>FIRE Corpus Required (25x Rule):</strong> ₹${fireCorpus.toLocaleString(undefined, {maximumFractionDigits: 0})}<br>
+          <strong>Projected Wealth at Retirement:</strong> ₹${totalWealth.toLocaleString(undefined, {maximumFractionDigits: 0})}<br>
+          <strong>Gap:</strong> ₹${gap > 0 ? gap.toLocaleString(undefined, {maximumFractionDigits: 0}) : 'No Gap!'}<br>
+          ${advice}
+        </p>
+        <small>Note: This calculation uses the 25x rule (annual expense × 25) and assumes annual compounding for investments and inflation.</small>
+      `;
+    }
+    // =============================
+    // Card Fade-in Animation on Scroll
+    // =============================
+    function animateCardsOnScroll() {
+      const cards = document.querySelectorAll('.card');
+      const trigger = window.innerHeight * 0.92;
+      cards.forEach(card => {
+        const rect = card.getBoundingClientRect();
+        if (rect.top < trigger) {
+          card.classList.add('in-view');
+        } else {
+          card.classList.remove('in-view');
+        }
+      });
+    }
+    window.addEventListener('scroll', animateCardsOnScroll);
+    window.addEventListener('resize', animateCardsOnScroll);
+    window.addEventListener('DOMContentLoaded', animateCardsOnScroll);
+    // =============================
+    // End of Script
+    // =============================
+  </script>
+</body>
+</html>
+
